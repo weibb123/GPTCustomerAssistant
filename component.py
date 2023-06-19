@@ -6,18 +6,8 @@ def sidebar():
     with st.sidebar:
         st.markdown(
             "## How to use\n"
-            "1. Enter your [OpenAI API Key](https://platform.openai.com/account/api-keys) below🔑\n"
-            "2. Ask a question to get to know what we sell here \n"
+            "1. Ask a question to get to know what we sell here \n"
         )
-        api_key = st.text_input(
-            "OpenAI API Key",
-            type="password",
-            placeholder="Paste your OpenAI Key here",
-            help="You can get your API key from https://platform.openai.com/account/api-keys.",
-            value=st.session_state.get("OPENAI_API_KEY", ""),
-        )
-        if api_key:
-            set_openai_api_key(api_key)
         
         st.markdown("---")
         st.markdown("# About")

@@ -75,6 +75,7 @@ with container:
         submit_button = st.form_submit_button(label='Send')
 
     if submit_button and user_input:
+        if not st.session_state.get("api_key_configured")
         response = llm.predict(human_input=user_input, context=context)
         st.session_state['past'].append(user_input)
         st.session_state['generated'].append(response)
