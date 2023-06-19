@@ -59,8 +59,9 @@ llm = LLMChain(
 st.title('GPT Customer Service Demo💻')
 st.markdown("""
 Welcome! Come talk with the customer assistant to learn about what we sell here.
-\
-This is a demo of leveraging GPT to build a end to end customer service system
+\n
+This is a demo of leveraging GPT to build a end to end customer service system\n
+Note: This app is using my personal key to make API call, that is, each response costs me couple cents. \n
 """
 )
 
