@@ -7,8 +7,9 @@ def set_openai_api_key(api_key: str):
 def sidebar():
     with st.sidebar:
         st.markdown("## How to use\n"
-                    "1. Ask a question to get to know what we sell here \n")
-        API_KEY = st.text_input(":blue[Enter Your OPENAI API-KEY :]",
+                    "1. Enter your [OpenAI API key](https://platform.openai.com/account/api-keys) below🔑\n"
+                    "2. Ask a question to get to know what we sell here \n")
+        API_KEY = st.text_input("OpenAI API Key",
                                             placeholder="Paste your OpenAI API key here (sk-...)",
                                             type="password")
         
