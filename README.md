@@ -1,7 +1,9 @@
 # GPTCustomerAssistant
 
 ## Demonstration
-https://github.com/weibb123/GPTCustomerAssistant/assets/84426364/6dcff07d-e94f-4461-9c94-ff76ec387cf9
+https://github.com/weibb123/GPTCustomerAssistant/assets/84426364/86f23290-6642-42e0-9dbd-2f11fe2b8cd1
+
+
 
 
 
