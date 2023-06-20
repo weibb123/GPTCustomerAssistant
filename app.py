@@ -4,17 +4,15 @@ from streamlit_chat import message
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
 from langchain import LLMChain
-from component import sidebar
+from component import *
+from openai.error import OpenAIError
 from langchain.memory import ConversationBufferMemory
-# Import os/file to set API key
-import os
-import json
-from key import code
+import openai
 from product_info import output_string # will be used as context
-os.environ["OPENAI_API_KEY"] = code
 
-context = output_string
+st.set_page_config(page_title="GPT Electronic Store", layout="wide")
 
+context = output_string # For our LLM Chain
 sidebar()
 
 # template / prompt
@@ -48,37 +46,51 @@ if 'memory' not in st.session_state:
         memory_key="chat_history", input_key="human_input"
     )
 
-# LLM chain to make responses
-llm = LLMChain(
-             llm = OpenAI(),
-             prompt = prompt,
-             memory=st.session_state['memory'],
-             )
+def get_response(text):
+    """Get response based on user's input"""
+
+    llm = LLMChain(
+            llm = OpenAI(openai_api_key=st.session_state['OPENAI_API_KEY']),
+            prompt = prompt,
+            memory=st.session_state['memory'])
+    response = llm.predict(human_input=text, context=context)
+
+    return response
+
+
 
 # UI SECTION
-st.title('GPT Customer Service Demo💻')
+st.header('GPT Customer Service Demo💻')
 st.markdown("""
-Welcome! Come talk with the customer assistant to learn about what we sell here.
-\n
-This is a demo of leveraging GPT to build a end to end customer service system\n
-Note: This app is using my personal key to make API call, that is, each response costs me couple cents. \n
-"""
-)
+"Welcome! Come talk with the customer assistant to learn about what we sell here.
+\
+This is a demo of leveraging GPT to build a end to end customer service system
+""")
+st.write("Freuqent Ask Questions:")
+st.markdown("- What do you sell?")
+st.markdown("- What is the most expensive product?")
+st.markdown("- What category you have?")
 
 # container for chat history
 response_container = st.container()
+# Ideas to change: Remove text box container but keep response container
 # container for text box
 container = st.container()
+
 
 with container:
     with st.form(key='my_form', clear_on_submit=True):
         user_input = st.text_area("You:", key='input', height=100)
         submit_button = st.form_submit_button(label='Send')
 
-    if submit_button and user_input:
-        response = llm.predict(human_input=user_input, context=context)
-        st.session_state['past'].append(user_input)
-        st.session_state['generated'].append(response)
+    if submit_button:
+        API_KEY = st.session_state['OPENAI_API_KEY']
+        if not API_KEY:
+            st.error("Invalid [OpenAI API key](https://beta.openai.com/account/api-keys).")
+        else:
+            response = get_response(user_input) # put this in correct spot
+            st.session_state['past'].append(user_input)
+            st.session_state['generated'].append(response)
         
         
 if st.session_state['generated']:
