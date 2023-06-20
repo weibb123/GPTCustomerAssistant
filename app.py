@@ -46,6 +46,7 @@ if 'memory' not in st.session_state:
         memory_key="chat_history", input_key="human_input"
     )
 
+@st.cache_data
 def get_response(text):
     """Get response based on user's input"""
 
