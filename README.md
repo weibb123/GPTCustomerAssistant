@@ -14,7 +14,7 @@ Utilizing Large Language Model to design a new way for customers to shop online.
   - [Tech Stack](#tech-stack)
   - [Lessons learned and recommendation](#lessons-learned-and-recommendation)
   - [Limitation and what can be improved](#limitation-and-what-can-be-improved)
-  - Evaluation(#Evaluation)
+  - [Evaluation](#Evaluation)
   - [Reference](#reference)
 
 
