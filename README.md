@@ -54,6 +54,9 @@ Either ML model with some sort of distance metric or use GPT's great ability to 
 ## Reference
 https://python.langchain.com/docs/modules/memory/how_to/adding_memory
 
+https://docs.streamlit.io/library/api-reference/session-state
+
+
 
 
 
