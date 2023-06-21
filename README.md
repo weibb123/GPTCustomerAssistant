@@ -14,6 +14,7 @@ Utilizing Large Language Model to design a new way for customers to shop online.
   - [Tech Stack](#tech-stack)
   - [Lessons learned and recommendation](#lessons-learned-and-recommendation)
   - [Limitation and what can be improved](#limitation-and-what-can-be-improved)
+  - Evaluation(#Evaluation)
   - [Reference](#reference)
 
 
@@ -50,6 +51,13 @@ One possible solution:
 
 Given user's input, perform a similarity search through the data and check if user's sentence match any allowed products or categories in the data. \
 Either ML model with some sort of distance metric or use GPT's great ability to understand context to do similarity search but at a cost of API call.
+
+## Evaluation
+
+Although this webapp does not include evaluation.., one can certainly use different evaluation methods to evaluate success.\
+BLEU score: comparing human response and GPT response\
+OPENAI API Check: Check whether GPT response contains harmful content\
+Human validation: Check if GPT reponse match with what human will typically response.
 
 ## Reference
 https://python.langchain.com/docs/modules/memory/how_to/adding_memory
