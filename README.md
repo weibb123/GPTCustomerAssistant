@@ -64,6 +64,8 @@ https://python.langchain.com/docs/modules/memory/how_to/adding_memory
 
 https://docs.streamlit.io/library/api-reference/session-state
 
+https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/
+
 
 
 
