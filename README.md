@@ -39,7 +39,7 @@ Electronic products that are made up or from online search. Each product in stor
 - STREAMLIT (UI for the system)
 
 ## Lessons learned and recommendation
-The difficult part of building this web app is to include chat history in the system. I learned that OPENAI CHATGPT API does not have the components to store chat history. Thankfully, Langchain has the ability to add memory in LLM Chains. Now, the difficult part is to learn more about streamlit(frontend for the chatbot) and store user's input inside langchain's llm chain. I believe that chat history is an essential component especially chatbot with conversational capabilities. The times that you might not need chat history but nice to have is when building a question answering chatbot mainly information retreival.
+The difficult part of building this web app is to include chat history in the system. I learned that OPENAI CHATGPT API does not have the components to store chat history. Thankfully, Langchain has the ability to add memory in LLM Chains. Now, the difficult part is to learn more about streamlit(frontend for the chatbot) and store user's input inside langchain's llm chain. I believe that chat history is an essential component especially chatbot with conversational capabilities. There are times that you might not need chat history but nice to have is when building a question answering chatbot mainly information retreival.
 
 
 ## Limitation and what can be improved
